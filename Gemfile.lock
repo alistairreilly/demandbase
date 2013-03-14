@@ -15,12 +15,15 @@ GEM
       rdoc
     json (1.7.7)
     metaclass (0.0.1)
+    mime-types (1.21)
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.6.1)
     rake (10.0.3)
     rdoc (3.12.2)
       json (~> 1.4)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     shoulda (3.3.2)
       shoulda-context (~> 1.0.1)
       shoulda-matchers (~> 1.4.1)
@@ -36,4 +39,5 @@ DEPENDENCIES
   bundler (~> 1.2.1)
   jeweler (~> 1.8.3)
   rdoc (~> 3.12)
+  rest-client (~> 1.6.7)
   shoulda
