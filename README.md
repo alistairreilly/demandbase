@@ -30,9 +30,6 @@ record.demandbase_sid
 record.marketing_alias
 # => 3874866
 
-record = Demandbase::lookup_ip '10.212.13.131'
-# => "Financial Services"
-
 record.industry
 # => "Financial Services"
 
