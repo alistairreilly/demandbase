@@ -1,5 +1,6 @@
 source "http://rubygems.org"
 
+gem "json",         "~> 1.7.7"
 gem "rest-client",  "~> 1.6.7"
 
 group :development do
