@@ -43,34 +43,34 @@ record.employee_count
 # => 64820
 
 record.primary_sic
-# => 6021
+# => "6021"
 
 record.street_address
 # => "Bahnhofstrasse 45"
 
 record.city
-# => Z\u00fcrich"
+# => "Z\u00fcrich"
 
 record.state
-# => ZH"
+# => "ZH"
 
 record.zip
-# => 8001"
+# => 8001
 
 record.country
-# => CH"
+# => "CH"
 
 record.country_name
-# => Switzerland"
+# => "Switzerland"
 
 record.phone
-# => +41 44 234 11 11"
+# => "+41 44 234 11 11"
 
 record.stock_ticker
 # => "UBS"
 
 record.web_site
-# => ubs.com"
+# => "ubs.com"
 
 record.annual_sales
 # =>  30632917000
