@@ -1,9 +1,4 @@
 module Demandbase
-  RTID_KEY = ENV['DEMANDBASE_RTID_KEY']
-  API_URLS = {
-    :domain => "http://api.demandbase.com/api/v1/domain.json?key=#{RTID_KEY}",
-    :ip     => "http://api.demandbase.com/api/v1/ip.json?key=#{RTID_KEY}" }
-
   class Record
     attr_accessor :company_name
     attr_accessor :demandbase_sid
@@ -34,11 +29,20 @@ module Demandbase
 
     # Instantiate a new Demandbase Record from a domain name.
     def initialize(domain)
-      query = cleanse_domain(domain)
-      url = Demandbase::API_URLS[:domain] + "&query=#{query}"
+      raise Demandbase::RTIDNotSetError if rtid_key.nil?
 
       begin
-        response          = JSON.parse(RestClient.get(url))
+        query = cleanse_domain(domain)
+        url = domain_api_url + "&query=#{query}"
+      rescue => e
+        raise Demandbase::ParseError
+      end
+
+      begin
+        response = JSON.parse(RestClient.get(url))
+
+        return nil unless response["domain"]
+
         @company_name     = response["domain"]["company_name"]
         @demandbase_sid   = response["domain"]["demandbase_sid"]
         @marketing_alias  = response["domain"]["marketing_alias"]
@@ -66,7 +70,7 @@ module Demandbase
         @fortune_1000     = response["domain"]["fortune_1000"]
         @forbes_2000      = response["domain"]["forbes_2000"]
       rescue => e
-        puts "Problem querying the server: #{e.inspect}"
+        raise ServerError
       end
     end
 
@@ -77,12 +81,27 @@ module Demandbase
     def cleanse_domain(domain)
       domain.downcase!
       domain = domain.sub(/^https?\:\/\//, '').sub(/^www./,'')
-      domain = domain.split("/").first
+      domain = domain.split(  "/").first
       domain = domain.split("@").last
 
       domain = PublicSuffix.parse(domain)
       domain = "#{domain.sld}.#{domain.tld}"
       domain
+    end
+
+    # Return the Demandbase RTID from the environment.
+    def rtid_key
+      ENV['DEMANDBASE_RTID_KEY']
+    end
+
+    # Return the base URL for the Demandbase domain API
+    def domain_api_url
+      "http://api.demandbase.com/api/v1/domain.json?key=#{rtid_key}"
+    end
+
+    # Return the base URL for the Demandbase IP API
+    def ip_api_url
+      "http://api.demandbase.com/api/v1/ip.json?key=#{rtid_key}"
     end
   end
 end

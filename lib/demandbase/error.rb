@@ -14,5 +14,4 @@ module Demandbase
   # Raised when there's a problem communicating with the Demandbase server.
   class ServerError < Error
   end
-
 end

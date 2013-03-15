@@ -52,6 +52,23 @@ class TestDemandbaseRecord < Test::Unit::TestCase
       record = Demandbase::Record.new(query)
       assert_equal "github.com", record.web_site, "with #{query}"
     end
+  end
 
+  should "should return nil if no record is found" do
+    record = Demandbase::lookup('leereilly.net')
+  end
+
+  should "raise an RTIDNotSetError if no DEMANDBASE_RTID_KEY is set" do
+    Demandbase::Record.any_instance.stubs(:rtid_key).returns(nil)
+    assert_raise(Demandbase::RTIDNotSetError) { Demandbase::lookup('github.com') }
+  end
+
+  should "raise a ParseError if the domain doesn't look valid" do
+    assert_raise(Demandbase::ParseError) { Demandbase::lookup('NOPE') }
+  end
+
+  should "raise a ServerError if there's a problem communicating with the Demandbase server" do
+    Demandbase::Record.any_instance.stubs(:domain_api_url).returns('http://www.example.com')
+    assert_raise(Demandbase::ServerError) { Demandbase::lookup('github.com') }
   end
 end
