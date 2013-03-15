@@ -5,8 +5,9 @@ gem "public_suffix", "~> 1.2.0"
 gem "rest-client",   "~> 1.6.7"
 
 group :development do
-  gem "shoulda",  ">= 0"
-  gem "rdoc",     "~> 3.12"
   gem "bundler",  "~> 1.2.1"
   gem "jeweler",  "~> 1.8.3"
+  gem "mocha",      "~> 0.13.3"
+  gem "rdoc",     "~> 3.12"
+  gem "shoulda",  ">= 3.3.2"
 end
