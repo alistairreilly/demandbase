@@ -29,7 +29,7 @@ export DEMANDBASE_RTID_KEY=1234deadbeef4321
 #### Heroku Example
 
 ```
-heroku set DEMANDBASE_RTID_KEY=1234deadbeef4321
+heroku config:add DEMANDBASE_RTID_KEY=1234deadbeef4321
 ```
 
 ### Usage
