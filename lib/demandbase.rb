@@ -1,5 +1,4 @@
 require 'json'
-require 'mocha/setup'
 require 'public_suffix'
 require 'rest_client'
 
