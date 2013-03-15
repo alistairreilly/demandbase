@@ -1,3 +1,7 @@
+# 0.1.4
+
+* Add a utility method `is_academic?(domain)` for detecting academic organizations, educational institutions, etc.
+
 # 0.1.3
 
 * Moved `mocha/setup` requirement to test helper.
