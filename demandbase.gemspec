@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "demandbase"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Lee Reilly"]
@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "demandbase.gemspec",
     "lib/demandbase.rb",
+    "lib/demandbase/error.rb",
     "lib/demandbase/record.rb",
     "test/helper.rb",
     "test/test_demandbase.rb",
@@ -44,27 +45,30 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<json>, ["~> 1.7.7"])
       s.add_runtime_dependency(%q<public_suffix>, ["~> 1.2.0"])
       s.add_runtime_dependency(%q<rest-client>, ["~> 1.6.7"])
-      s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_development_dependency(%q<bundler>, ["~> 1.2.1"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.8.3"])
+      s.add_development_dependency(%q<mocha>, ["~> 0.13.3"])
+      s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
+      s.add_development_dependency(%q<shoulda>, [">= 3.3.2"])
     else
       s.add_dependency(%q<json>, ["~> 1.7.7"])
       s.add_dependency(%q<public_suffix>, ["~> 1.2.0"])
       s.add_dependency(%q<rest-client>, ["~> 1.6.7"])
-      s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<rdoc>, ["~> 3.12"])
       s.add_dependency(%q<bundler>, ["~> 1.2.1"])
       s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
+      s.add_dependency(%q<mocha>, ["~> 0.13.3"])
+      s.add_dependency(%q<rdoc>, ["~> 3.12"])
+      s.add_dependency(%q<shoulda>, [">= 3.3.2"])
     end
   else
     s.add_dependency(%q<json>, ["~> 1.7.7"])
     s.add_dependency(%q<public_suffix>, ["~> 1.2.0"])
     s.add_dependency(%q<rest-client>, ["~> 1.6.7"])
-    s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<rdoc>, ["~> 3.12"])
     s.add_dependency(%q<bundler>, ["~> 1.2.1"])
     s.add_dependency(%q<jeweler>, ["~> 1.8.3"])
+    s.add_dependency(%q<mocha>, ["~> 0.13.3"])
+    s.add_dependency(%q<rdoc>, ["~> 3.12"])
+    s.add_dependency(%q<shoulda>, [">= 3.3.2"])
   end
 end
 
