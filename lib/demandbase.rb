@@ -1,5 +1,7 @@
 require 'json'
+require 'public_suffix'
 require 'rest_client'
+
 require 'demandbase/record'
 
 module Demandbase

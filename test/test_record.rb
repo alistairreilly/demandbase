@@ -36,4 +36,22 @@ class TestDemandbaseRecord < Test::Unit::TestCase
     assert_equal false,                   record.fortune_1000 # TODO: fix this test in 2017
     assert_equal false,                   record.forbes_2000  # TODO: fix this test in 2016
   end
+
+  should "initialize a new record with a subdomain" do
+    queries = [
+      "github.com",
+      "www.github.com",
+      "developer.github.com/",
+      "http://www.github.com/",
+      "https://www.github.com",
+      "https://www.github.com/leereilly/demandbase",
+      "lee@github.com"
+    ]
+
+    queries.each do |query|
+      record = Demandbase::Record.new(query)
+      assert_equal "github.com", record.web_site, "with #{query}"
+    end
+
+  end
 end

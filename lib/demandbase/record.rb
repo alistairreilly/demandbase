@@ -34,7 +34,8 @@ module Demandbase
 
     # Instantiate a new Demandbase Record from a domain name.
     def initialize(domain)
-      url = Demandbase::API_URLS[:domain] + "&query=#{domain}"
+      query = cleanse_domain(domain)
+      url = Demandbase::API_URLS[:domain] + "&query=#{query}"
 
       begin
         response          = JSON.parse(RestClient.get(url))
@@ -67,6 +68,21 @@ module Demandbase
       rescue => e
         puts "Problem querying the server: #{e.inspect}"
       end
+    end
+
+    # Clean the domain of things like 'http(s)://', 'www',
+    # '?foo=bar', etc.
+    #
+    # Return the domain string.
+    def cleanse_domain(domain)
+      domain.downcase!
+      domain = domain.sub(/^https?\:\/\//, '').sub(/^www./,'')
+      domain = domain.split("/").first
+      domain = domain.split("@").last
+
+      domain = PublicSuffix.parse(domain)
+      domain = "#{domain.sld}.#{domain.tld}"
+      domain
     end
   end
 end
