@@ -41,4 +41,25 @@ class TestDemandbase < Test::Unit::TestCase
 
   end
 
+  should "know a school" do
+    schools = [
+      'strath.ac.uk',
+      'stanford.edu',
+      'walnutcreeksd.org'
+    ]
+
+    not_schools = [
+      'lanl.gov',
+      'microsoft.com'
+    ]
+
+    schools.each do |school|
+      assert_equal true, Demandbase::is_academic?(school)
+    end
+
+    not_schools.each do |school|
+      assert_equal false, Demandbase::is_academic?(school)
+    end
+  end
+
 end
