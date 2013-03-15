@@ -1,76 +1,93 @@
-# Prerequisites
+The Demandbase gem is a Ruby wrapper for the [Demandbase](http://www.demandbase.com?affiliate_id=LOL_JK_MAYBE) platform allowing you to [buzzwords here].
 
-* An active [Demandbase](http://www.demandbase.com?affiliate_id=LOL_JK_MAYBE) account with at least on RTID key.
+### Prerequisites
 
-# Installation
+You'll need an active Demandbase account with at least one Real Time Identification(RTID) key. You can sign up for a trial developer key [here](http://www.demandbase.com?affiliate_id=LOL_JK_MAYBE)).
 
-Install the Demandbase wrapper with `gem install demandbase`,
+### Installation
 
-# Configuraton
+Install the Demandbase wrapper with:
 
-Set an environment variable called `$DEMANDBASE_RTID_KEY` with the key value.
+`gem install demandbase`
 
-# Usage
+or add the following to your `Gemfile`:
 
-If everything's installed and configured you should be able to look up companies' information via their domain name or IP address as follows.
+`gem 'demandbase', '~> 0.1.1'`
+
+### Configuraton
+
+Set an environment variable called `$DEMANDBASE_RTID_KEY` with the your RTID key value.
+
+#### Bash Example
+
+```
+export DEMANDBASE_RTID_KEY=1234deadbeef4321
+```
+
+#### Heroku Example
+
+```
+heroku set DEMANDBASE_RTID_KEY=1234deadbeef4321
+```
+
+### Usage
+
+If everything's installed and configured you should be able to look up companies' information via their domain name as follows:
 
 ```ruby
-record = Demandbase::lookup_ip '123.12.1.123'
-# => <Demandbase::Record:0x007aba42a46484>
-
-record = Demandbase::lookup_domain 'ubs.com'
+record = Demandbase::lookup_domain 'microsoft.com'
 # => <Demandbase::Record:0x007fce82a46060>
 
 record.company_name
-# => "UBS"
+# => "Microsoft Corporation"
 
 record.demandbase_sid
-# => 3874866
+# => 457441
 
 record.marketing_alias
-# => 3874866
+# => "Microsoft"
 
 record.industry
-# => "Financial Services"
+# => "Software & Technology"
 
 record.sub_industry
-# => "Banking & Finance"
+# => "Software Applications"
 
 record.employee_count
-# => 64820
+# => 94050
 
 record.primary_sic
-# => "6021"
+# => "7372"
 
 record.street_address
-# => "Bahnhofstrasse 45"
+# => "1 Microsoft Way"
 
 record.city
-# => "Z\u00fcrich"
+# => "Redmond"
 
 record.state
-# => "ZH"
+# => "WA"
 
 record.zip
-# => 8001
+# => "98052"
 
 record.country
-# => "CH"
+# => "US"
 
 record.country_name
-# => "Switzerland"
+# => "United States"
 
 record.phone
-# => "+41 44 234 11 11"
+# => "425-882-8080"
 
 record.stock_ticker
-# => "UBS"
+# => "MSFT"
 
 record.web_site
-# => "ubs.com"
+# => "microsoft.com"
 
 record.annual_sales
-# =>  30632917000
+# =>  73723000000
 
 record.revenue_range
 # =>  "Over $5B"
@@ -78,20 +95,29 @@ record.revenue_range
 record.employee_range
 # =>  "Enterprise"
 
+record.b2b
+# =>  true
+
+record.b2c
+# =>  true
+
+record.traffic
+# => "Very High"
+
 record.latitude
-# =>  0.0
+# =>  47.6401
 
 record.longitude
-# =>  0.0
+# =>  -122.13
 
 record.fortune_1000
-# =>  false
+# =>  true
 
 record.forbes_2000
 # =>  true
 ```
 
-# DLC / Enhancements
+### DLC / Enhancements
 
 * Use the [csi](https://github.com/leereilly/csi) gem if you'd like to correlate SIC codes with NAICS codes.
 * Use the [fortune-finder](https://github.com/leereilly/fortune-finder) gem if you'd like to retrieve the ranking of a Fortune 500 company.
