@@ -1,6 +1,16 @@
+# 0.1.2
+
+* `Demandbase::lookup()` now returns nil if no record is found.
+
+* Added some new Error classes to
+ * raises a `Demandbase::RTIDNotSetError` if a RTID key is not set.
+ * raises a `Demandbase::ParseError `if the domain doesn't look legit.
+ * raises a `Demandbase::ServerError` if the Demandbase server is unresponsive.
+
+
 # 0.1.1
 
-* Add support for subdomains, email addresses, etc. e.g. the following now work:
+* Added support for subdomains, email addresses, etc. e.g. the following now work:
 
 ```ruby
   Demandbase::Record.new "www.github.com",
