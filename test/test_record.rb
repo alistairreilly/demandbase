@@ -61,6 +61,7 @@ class TestDemandbaseRecord < Test::Unit::TestCase
   should "raise an RTIDNotSetError if no DEMANDBASE_RTID_KEY is set" do
     Demandbase::Record.any_instance.stubs(:rtid_key).returns(nil)
     assert_raise(Demandbase::RTIDNotSetError) { Demandbase::lookup('github.com') }
+    Demandbase::Record.any_instance.unstub(:rtid_key)
   end
 
   should "raise a ParseError if the domain doesn't look valid" do
@@ -70,5 +71,6 @@ class TestDemandbaseRecord < Test::Unit::TestCase
   should "raise a ServerError if there's a problem communicating with the Demandbase server" do
     Demandbase::Record.any_instance.stubs(:domain_api_url).returns('http://www.example.com')
     assert_raise(Demandbase::ServerError) { Demandbase::lookup('github.com') }
+    Demandbase::Record.any_instance.unstub(:domain_api_url)
   end
 end
