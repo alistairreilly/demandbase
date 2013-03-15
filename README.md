@@ -1,4 +1,6 @@
-The Demandbase gem is a Ruby wrapper for the [Demandbase](http://www.demandbase.com?affiliate_id=LOL_JK_MAYBE) platform allowing you to [buzzwords here].
+![Demandbase API Ruby Wrapper](http://demandbaselabs.com/images/Demandbase_logo_3C_RGB_1124x138.png)
+
+The Demandbase gem is a Ruby wrapper for the [Demandbase](http://www.demandbase.com?affiliate_id=LOL_JK_MAYBE) real-time targeting and personalization platform for B2B.
 
 ### Prerequisites
 
