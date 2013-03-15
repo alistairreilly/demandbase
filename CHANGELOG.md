@@ -1,3 +1,8 @@
+# 0.1.3
+
+* Moved `mocha/setup` requirement to test helper.
+* Unstubbe some stubbed methods making tests sometimes fails.
+
 # 0.1.2
 
 * `Demandbase::lookup()` now returns nil if no record is found.
