@@ -37,7 +37,7 @@ heroku config:add DEMANDBASE_RTID_KEY=1234deadbeef4321
 If everything's installed and configured you should be able to look up companies' information via their domain name as follows:
 
 ```ruby
-record = Demandbase::lookup_domain 'microsoft.com'
+record = Demandbase::lookup 'microsoft.com'
 # => <Demandbase::Record:0x007fce82a46060>
 
 record.company_name
