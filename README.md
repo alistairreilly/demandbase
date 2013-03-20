@@ -32,6 +32,8 @@ heroku config:add DEMANDBASE_RTID_KEY=1234deadbeef4321
 
 ### Usage
 
+#### Domain Lookup
+
 If everything's installed and configured you should be able to look up companies' information via their domain name as follows:
 
 ```ruby
@@ -116,6 +118,46 @@ record.fortune_1000
 record.forbes_2000
 # =>  true
 ```
+
+#### IP Lookup
+
+The IP lookup returns some additional information e.g.
+
+### Field Info
+
+#### Audience
+
+<table>
+   <tr>
+      <th>Company Size</th>
+      <th>Vertical</th>
+      <th>Origination</th>
+   </tr>
+   <tr>
+      <td>Enterprise<br>Mid-Market<br>SMB</td>
+      <td>Government<br>Education</td>
+      <td>Wireless<br>Residential<br>SOHO<br>Unknown</td>
+   </tr>   
+</table>
+
+#### Audience Segment
+
+<table>
+   <tr>
+      <th>Company Size</th>
+      <th>Government</th>
+      <th>Education</th>
+      <th>Wireless</th>
+      <th>Residential/SOHO/Unknown</th>
+   </tr>
+   <tr>
+      <td>Industry<br>Search Engine</td>
+      <td>Federal<br>International<br>State<br>City<br>Local<br>Military<br>Public Safety</td>
+      <td>University<br>K12<br>Vocational<br>Educational Services<br>Educational ISP</td>
+      <td>Wireless Device<br>Wireless Hotspot</td>
+      <td>Bots</td>
+   </tr>
+</table>
 
 ### DLC / Enhancements
 
