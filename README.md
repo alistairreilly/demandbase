@@ -1,10 +1,8 @@
-![Demandbase API Ruby Wrapper](http://demandbaselabs.com/images/Demandbase_logo_3C_RGB_1124x138.png)
-
 The Demandbase gem is a Ruby wrapper for the [Demandbase](http://www.demandbase.com?affiliate_id=LOL_JK_MAYBE) real-time targeting and personalization platform.
 
 ### Prerequisites
 
-You'll need an active Demandbase account with at least one Real Time Identification(RTID) key. You can sign up for a trial developer key [here](http://www.demandbase.com/who-is-demandbase/contact-demandbase/?affiliate_id=LOL_JK_MAYBE).
+You'll need an active Demandbase account with at least one Real Time Identification (RTID) key. You can sign up for a trial developer key [here](http://www.demandbase.com/who-is-demandbase/contact-demandbase/?affiliate_id=LOL_JK_MAYBE).
 
 ### Installation
 
