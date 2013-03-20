@@ -4,6 +4,8 @@ require 'rest_client'
 
 require 'demandbase/error'
 require 'demandbase/record'
+require 'demandbase/ip_record'
+require 'demandbase/domain_record'
 
 module Demandbase
 
