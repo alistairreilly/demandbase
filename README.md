@@ -125,6 +125,31 @@ The IP lookup returns some additional information e.g.
 
 ### Field Info
 
+#### Employee Range
+
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Unknown</td>
+    <td>:house:</td>
+  </tr>
+  <tr>
+    <td>Small</td>
+    <td>:school:1-99 employees</td>
+  </tr>
+  <tr>
+    <td>Mid-Market</td>
+    <td>:department_store: 100-999 employees</td>
+  </tr>
+  <tr>
+    <td>Enterprise</td>
+    <td>:office: 1000+ employees</td>
+  </tr>
+</table>
+
 #### Revenue Range
 
 <table>
