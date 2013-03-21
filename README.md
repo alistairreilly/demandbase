@@ -125,6 +125,63 @@ The IP lookup returns some additional information e.g.
 
 ### Field Info
 
+#### Revenue Range
+
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>$1 - $1M</td>
+    <td>:credit_card:</td>
+  </tr>
+  <tr>
+    <td>$1M - $5M</td>
+    <td>:dollar:</td>
+  </tr>
+  <tr>
+    <td>$5M - $10M</td>
+    <td>:dollar: :dollar:</td>
+  </tr>
+  <tr>
+    <td>$10M - $25M</td>
+    <td>:dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar:</td>
+  </tr>
+  <tr>
+    <td>$25M - $50M</td>
+    <td>:dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar: :dollar:</td>
+  </tr>
+  <tr>
+    <td>$50M - $100M</td>
+    <td>:moneybag:</td>
+  </tr>
+  <tr>
+    <td>$100M - $250M</td>
+    <td>:moneybag::moneybag:</td>
+  </tr>
+  <tr>
+    <td>$250M - $500M</td>
+    <td>:moneybag::moneybag::moneybag:</td>
+  </tr>
+  <tr>
+    <td>$500M - $1B</td>
+    <td>:moneybag::moneybag::moneybag::moneybag:</td>
+  </tr>
+  <tr>
+    <td>$1B - $2.5B</td>
+    <td>:moneybag::moneybag::moneybag::moneybag::moneybag:</td>
+  </tr>
+  <tr>
+    <td>$2.5B - $5B</td>
+    <td>:moneybag::moneybag::moneybag::moneybag::moneybag::moneybag:</td>
+  </tr>
+  <tr>
+    <td>Over $5B</td>
+    <td>:money_with_wings:</td>
+  </tr>
+</table>
+
 #### Audience
 
 <table>
