@@ -33,6 +33,11 @@ class TestDemandbase < Test::Unit::TestCase
     ]
   end
 
+  should "know an IP" do
+    assert_equal true, Demandbase::is_ip("12.12.12.12")
+    assert_equal false, Demandbase::is_ip("123.com")
+  end
+
   should "return nothing when no record is found" do
 
   end

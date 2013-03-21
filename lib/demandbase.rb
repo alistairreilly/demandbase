@@ -1,5 +1,6 @@
 require 'json'
 require 'public_suffix'
+require 'resolv'
 require 'rest_client'
 
 require 'demandbase/error'
@@ -41,6 +42,13 @@ module Demandbase
     #
     def lookup(domain)
       Demandbase::Record.new(domain)
+    end
+
+    # Ascertain whether the given query string is a valid IP address.
+    #
+    # Returns true if it's a valid IP address; false otherwise.
+    def is_ip(query)
+      !!(query =~ Resolv::IPv4::Regex)
     end
 
     # Find out if a particular domain is associated with an academic institution.
