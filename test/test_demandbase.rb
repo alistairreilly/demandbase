@@ -1,74 +1,74 @@
 require 'helper'
 
 class TestDemandbase < Test::Unit::TestCase
-  should "get a record for Stanford University" do
-    #assert_equal 'Stanford University', Demandbase::lookup_domain('stanford.edu')
-  end
+  # should "get a record for Stanford University" do
+  #   #assert_equal 'Stanford University', Demandbase::lookup_domain('stanford.edu')
+  # end
 
-  should "get a record for the University of Strathclyde" do
+  # should "get a record for the University of Strathclyde" do
 
-  end
+  # end
 
-  should "get a record for a GitHub's IP address" do
+  # should "get a record for a GitHub's IP address" do
 
-  end
+  # end
 
-  should "recognize IP addresses" do
+  # should "recognize IP addresses" do
 
-  end
+  # end
 
-  should "recognize domain names" do
+  # should "recognize domain names" do
 
-  end
+  # end
 
-  should "handle multiple formats" do
-    queries = [
-      "microsoft.com",
-      "www.microsoft.com",
-      "developer.hacks.microsoft.com",
-      "http://www.microsoft.com",
-      "https://www.microsofot.com",
-      "william.gates@microsoft.com",
-      "microsoft.co.uk"
-    ].each do |query|
-      assert_equal true, Demandbase::is_domain(query), query
-    end
-    assert_equal true, Demandbase::is_domain("google.com")
-    assert_equal false, Demandbase::is_domain("12.12.12.12")
-  end
+  # should "handle multiple formats" do
+  #   queries = [
+  #     "microsoft.com",
+  #     "www.microsoft.com",
+  #     "developer.hacks.microsoft.com",
+  #     "http://www.microsoft.com",
+  #     "https://www.microsofot.com",
+  #     "william.gates@microsoft.com",
+  #     "microsoft.co.uk"
+  #   ].each do |query|
+  #     assert_equal true, Demandbase::is_domain(query), query
+  #   end
+  #   assert_equal true, Demandbase::is_domain("google.com")
+  #   assert_equal false, Demandbase::is_domain("12.12.12.12")
+  # end
 
-  should "know an IP" do
-    assert_equal true, Demandbase::is_ip("12.12.12.12")
-    assert_equal false, Demandbase::is_ip("123.com")
-  end
+  # should "know an IP" do
+  #   assert_equal true, Demandbase::is_ip("12.12.12.12")
+  #   assert_equal false, Demandbase::is_ip("123.com")
+  # end
 
-  should "return nothing when no record is found" do
+  # should "return nothing when no record is found" do
 
-  end
+  # end
 
-  should "throw an exception when the service is down" do
+  # should "throw an exception when the service is down" do
 
-  end
+  # end
 
-  should "know a school" do
-    schools = [
-      'strath.ac.uk',
-      'stanford.edu',
-      'walnutcreeksd.org'
-    ]
+  # should "know a school" do
+  #   schools = [
+  #     'strath.ac.uk',
+  #     'stanford.edu',
+  #     'walnutcreeksd.org'
+  #   ]
 
-    not_schools = [
-      'lanl.gov',
-      'microsoft.com'
-    ]
+  #   not_schools = [
+  #     'lanl.gov',
+  #     'microsoft.com'
+  #   ]
 
-    schools.each do |school|
-      assert_equal true, Demandbase::is_academic?(school)
-    end
+  #   schools.each do |school|
+  #     assert_equal true, Demandbase::is_academic?(school)
+  #   end
 
-    not_schools.each do |school|
-      assert_equal false, Demandbase::is_academic?(school)
-    end
-  end
+  #   not_schools.each do |school|
+  #     assert_equal false, Demandbase::is_academic?(school)
+  #   end
+  # end
 
 end

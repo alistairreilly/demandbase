@@ -41,7 +41,7 @@ module Demandbase
     # Raises a Demandbase::ServerError if the Demandbase server is unresponsive.
     #
     def lookup(domain)
-      Demandbase::Record.new(domain)
+      Demandbase::DomainRecord.new(domain)
     end
 
     # Ascertain whether the given query string is a valid IP address.
@@ -71,7 +71,7 @@ module Demandbase
     # Raises a Demandbase::ServerError if the Demandbase server is unresponsive.
     #
     def is_academic?(domain)
-      record = Demandbase::Record.new(domain)
+      record = Demandbase::DomainRecord.new(domain)
       if record && ACADEMIC_SIC_CODES.include?(record.primary_sic)
         return true
       else

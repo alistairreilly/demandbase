@@ -8,5 +8,10 @@ module Demandbase
     attr_accessor :domestichq_sid
     attr_accessor :hq_sid
     attr_accessor :isp
+
+    # Return the base URL for the Demandbase domain API
+    def api_url
+      "http://api.demandbase.com/api/v1/domain.json?key=#{rtid_key}"
+    end
   end
 end
