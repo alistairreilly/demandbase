@@ -30,7 +30,9 @@ class TestDemandbase < Test::Unit::TestCase
       "https://www.microsofot.com",
       "william.gates@microsoft.com",
       "microsoft.co.uk"
-    ]
+    ].each do |query|
+      assert_equal true, Demandbase::is_domain(query), query
+    end
     assert_equal true, Demandbase::is_domain("google.com")
     assert_equal false, Demandbase::is_domain("12.12.12.12")
   end

@@ -55,7 +55,11 @@ module Demandbase
     #
     # Returns true if it's a valid domain name; false otherwise.
     def is_domain(query)
-      PublicSuffix.valid?(query)
+      begin
+        PublicSuffix.valid?(cleanse_domain(query))
+      rescue
+        false
+      end
     end
 
     # Find out if a particular domain is associated with an academic institution.
@@ -73,6 +77,21 @@ module Demandbase
       else
         return false
       end
+    end
+
+        # Clean the domain of things like 'http(s)://', 'www',
+    # '?foo=bar', etc.
+    #
+    # Return the domain string.
+    def cleanse_domain(domain)
+      domain.downcase!
+      domain = domain.sub(/^https?\:\/\//, '').sub(/^www./,'')
+      domain = domain.split(  "/").first
+      domain = domain.split("@").last
+
+      domain = PublicSuffix.parse(domain)
+      domain = "#{domain.sld}.#{domain.tld}"
+      domain
     end
   end
 end
