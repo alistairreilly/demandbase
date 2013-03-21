@@ -51,6 +51,13 @@ module Demandbase
       !!(query =~ Resolv::IPv4::Regex)
     end
 
+    # Ascertain whether the given query string is a valid domain name.
+    #
+    # Returns true if it's a valid domain name; false otherwise.
+    def is_domain(query)
+      PublicSuffix.valid?(query)
+    end
+
     # Find out if a particular domain is associated with an academic institution.
     #
     # Returns true if it looks like an academic organization; false otherwise.

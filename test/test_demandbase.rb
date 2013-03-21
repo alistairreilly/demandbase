@@ -31,6 +31,8 @@ class TestDemandbase < Test::Unit::TestCase
       "william.gates@microsoft.com",
       "microsoft.co.uk"
     ]
+    assert_equal true, Demandbase::is_domain("google.com")
+    assert_equal false, Demandbase::is_domain("12.12.12.12")
   end
 
   should "know an IP" do
