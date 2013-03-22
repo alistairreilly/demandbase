@@ -6,6 +6,17 @@ module Demandbase
       "http://api.demandbase.com/api/v1/domain.json?key=#{rtid_key}"
     end
 
+    # Ascertain whether the given query string is a valid domain name.
+    #
+    # Returns true if it's a valid domain name; false otherwise.
+    def is_domain(query)
+      begin
+        PublicSuffix.valid?(cleanse_domain(query))
+      rescue
+        false
+      end
+    end
+
     # Instantiate a new Demandbase Domain Record from a domain name.
     def initialize(domain)
       raise Demandbase::RTIDNotSetError if rtid_key.nil?

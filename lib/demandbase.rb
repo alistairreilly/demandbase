@@ -78,20 +78,5 @@ module Demandbase
         return false
       end
     end
-
-        # Clean the domain of things like 'http(s)://', 'www',
-    # '?foo=bar', etc.
-    #
-    # Return the domain string.
-    def cleanse_domain(domain)
-      domain.downcase!
-      domain = domain.sub(/^https?\:\/\//, '').sub(/^www./,'')
-      domain = domain.split(  "/").first
-      domain = domain.split("@").last
-
-      domain = PublicSuffix.parse(domain)
-      domain = "#{domain.sld}.#{domain.tld}"
-      domain
-    end
   end
 end
