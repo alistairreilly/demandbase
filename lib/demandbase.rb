@@ -32,6 +32,20 @@ module Demandbase
 
   class << self
 
+    # def lookup_ip
+
+    # end
+    # alias :lookup_ip_address
+
+    # def lookup_domain
+
+    # end
+
+    # def lazy_lookup
+
+    # end
+    # alias_method :lookup, :lazy_lookup
+
     # Look up a Demandbase record for a given domain name.
     #
     # Returns a Demandbase::Record if the record is found; nil otherwise.
@@ -40,25 +54,13 @@ module Demandbase
     # Raises a Demandbase::ParseError if the domain doesn't look legit.
     # Raises a Demandbase::ServerError if the Demandbase server is unresponsive.
     #
-    def lookup(domain)
-      Demandbase::DomainRecord.new(domain)
-    end
-
-    # Ascertain whether the given query string is a valid IP address.
-    #
-    # Returns true if it's a valid IP address; false otherwise.
-    def is_ip(query)
-      !!(query =~ Resolv::IPv4::Regex)
-    end
-
-    # Ascertain whether the given query string is a valid domain name.
-    #
-    # Returns true if it's a valid domain name; false otherwise.
-    def is_domain(query)
-      begin
-        PublicSuffix.valid?(cleanse_domain(query))
-      rescue
-        false
+    def lookup(query)
+      if Demandbase::IPRecord.is_ip(query)
+        Demandbase::IPRecord.new(query)
+      elsif Demandbase::DomainRecord.is_domain(query)
+        Demandbase::DomainRecord.new(query)
+      else
+        raise Demandbase::ParseError
       end
     end
 

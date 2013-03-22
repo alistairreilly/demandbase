@@ -9,10 +9,11 @@ module Demandbase
     # Ascertain whether the given query string is a valid domain name.
     #
     # Returns true if it's a valid domain name; false otherwise.
-    def is_domain(query)
+    def self.is_domain(query)
       begin
-        PublicSuffix.valid?(cleanse_domain(query))
-      rescue
+        result = PublicSuffix.valid?((Demandbase::DomainRecord.cleanse_domain(query)))
+        result
+      rescue => e
         false
       end
     end
@@ -22,7 +23,7 @@ module Demandbase
       raise Demandbase::RTIDNotSetError if rtid_key.nil?
 
       begin
-        query = cleanse_domain(domain)
+        query = Demandbase::DomainRecord.cleanse_domain(domain)
         url = api_url + "&query=#{query}"
       rescue => e
         raise Demandbase::ParseError
@@ -68,7 +69,7 @@ module Demandbase
     # '?foo=bar', etc.
     #
     # Return the domain string.
-    def cleanse_domain(domain)
+    def self.cleanse_domain(domain)
       domain.downcase!
       domain = domain.sub(/^https?\:\/\//, '').sub(/^www./,'')
       domain = domain.split(  "/").first

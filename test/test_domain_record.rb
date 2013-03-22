@@ -56,9 +56,23 @@ class TestDemandbaseDomainRecord < Test::Unit::TestCase
     assert_raise(Demandbase::ParseError) { Demandbase::lookup('NOPE') }
   end
 
+  should "recognize valid domains" do
+    queries = [
+      "github.com",
+      "www.github.com",
+      "developer.github.com/",
+      "http://www.github.com/",
+      "https://www.github.com",
+      "https://www.github.com/leereilly/demandbase",
+      "lee@github.com"
+    ].each do |query|
+      assert_equal true, Demandbase::DomainRecord.is_domain(query), "with #{query}"
+    end
+  end
+
   should "raise a ServerError if there's a problem communicating with the Demandbase server" do
     Demandbase::DomainRecord.any_instance.stubs(:api_url).returns('http://www.example.com')
-    assert_raise(Demandbase::ServerError) { Demandbase::lookup('github.com') }
+    assert_raise(Demandbase::ServerError) { Demandbase::DomainRecord.new('github.com') }
     Demandbase::DomainRecord.any_instance.unstub(:api_url)
   end
 end

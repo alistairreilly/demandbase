@@ -24,6 +24,13 @@ module Demandbase
       "http://api.demandbase.com/api/v2/ip.json?key=#{rtid_key}"
     end
 
+    # Ascertain whether the given query string is a valid IP address.
+    #
+    # Returns true if it's a valid IP address; false otherwise.
+    def self.is_ip(query)
+      !!(query =~ Resolv::IPv4::Regex)
+    end
+
     # Instantiate a new Demandbase IP Record from an IP address.
     def initialize(ip)
       raise Demandbase::RTIDNotSetError if rtid_key.nil?
