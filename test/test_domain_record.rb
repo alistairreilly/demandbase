@@ -48,7 +48,7 @@ class TestDemandbaseDomainRecord < Test::Unit::TestCase
     end
   end
 
-  should "should return nil if no record is found" do
+  should "return nil if no record is found" do
     record = Demandbase::lookup('leereilly.net')
   end
 
