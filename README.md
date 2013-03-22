@@ -335,7 +335,7 @@ email_looking_thing 'willy@microsoft.com'
   </tr>
 
   <tr>
-    <td>employee_range</td>
+    <td>[employee_range](#employee-range)</td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
