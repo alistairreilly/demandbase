@@ -37,7 +37,7 @@ heroku config:add DEMANDBASE_RTID_KEY=1234deadbeef4321
 If everything's installed and configured you should be able to look up companies' information via their domain name as follows:
 
 ```ruby
-record = Demandbase::lookup 'microsoft.com'
+record = Demandbase::lookup_domain 'microsoft.com'
 # => <Demandbase::Record:0x007fce82a46060>
 
 record.company_name
@@ -123,7 +123,266 @@ record.forbes_2000
 
 The IP lookup returns some additional information e.g.
 
+```ruby
+record = Demandbase::lookup_ip 'microsoft.com'
+# => <Demandbase::Record:0x007fce82a46060>
+```
+
+#### Lazy Lookup
+
+If you have an IP, domain name, email address, or craptacular URL and just want to use that use `lazy_lookup`
+
+```ruby
+ip_looking_thing = '12.12.12.12'
+domain_looking_thing 'http://google.com'
+url_looking_thing 'www.google.com/lol?seriously=true'
+email_looking_thing 'willy@microsoft.com'
+
+(Demandbase::lazy_lookup ip_looking_thing).class
+# => Demanbase::IPRecord
+
+(Demandbase::lazy_lookup domain_looking_thing).class
+# => Demanbase::DomainRecord
+
+(Demandbase::lazy_lookup url_looking_thing).class
+# => Demanbase::DomainRecord
+
+(Demandbase::lazy_lookup email_looking_thing).class
+# => Demanbase::DomainRecord
+```
+
 ### Field Info
+
+<table>
+  <tr>
+    <th>Field name (click for description)</th>
+    <th>DomainRecord Presence?</th>
+    <th>IPRecord Presence?</th>
+  </tr>
+
+  <tr>
+    <td>registry_company_name</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>registry_city</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>registry_state</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>registry_country</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>registry_latitude</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>registry_longitude</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>ip</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>information_level</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>worldhq_sid</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>domestichq_sid</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>hq_sid</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>isp</td>
+    <td>:finnadie:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>company_name</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>demandbase_sid</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>marketing_alias</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>industry</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>sub_industry</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>employee_count</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>primary_sic</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>street_address</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>city</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>state</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>zip</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>country</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>country_name</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>phone</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>web_site</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>annual_sales</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>revenue_range</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>employee_range</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>b2b</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>b2c</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>traffic</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>latitude</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>longitude</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>fortune_1000</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+  <tr>
+    <td>forbes_2000</td>
+    <td>:metal:</td>
+    <td>:metal:</td>
+  </tr>
+
+</table>
 
 #### Employee Range
 
@@ -219,7 +478,7 @@ The IP lookup returns some additional information e.g.
       <td>Enterprise<br>Mid-Market<br>SMB</td>
       <td>Government<br>Education</td>
       <td>Wireless<br>Residential<br>SOHO<br>Unknown</td>
-   </tr>   
+   </tr>
 </table>
 
 #### Audience Segment
