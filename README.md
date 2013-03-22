@@ -340,7 +340,7 @@ email_looking_thing 'willy@microsoft.com'
   </tr>
 
   <tr>
-    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#employee-range">employee_range</a>/a></td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#employee-range">employee_range</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
