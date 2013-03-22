@@ -89,6 +89,19 @@ module Demandbase
     "9721"  # international affairs
   ]
 
+  # SIC codes for registered nonprofits.
+  NONPROFIT_SIC_CODES = [
+    "6732", # Educational, religious, and charitable Trusts
+    "864",  # Civic, social, and fraternal associations
+    "8641", # Civic, social, and fraternal associations
+    "865",  # Political organizations
+    "8651", # Political organizations
+    "866",  # Religious organizations
+    "8661", # Religious organizations
+    "869",  # Membership organizations, not elsewhere classified
+    "8699"  # Membership organizations, not elsewhere classified
+  ]
+
   class << self
 
     def lookup_ip(query)
@@ -134,6 +147,7 @@ module Demandbase
     #
     def is_academic?(domain)
       record = Demandbase::DomainRecord.new(domain)
+
       if record && ACADEMIC_SIC_CODES.include?(record.primary_sic)
         return true
       else
@@ -141,9 +155,9 @@ module Demandbase
       end
     end
 
-    # Find out if a particular domain is associated with an academic institution.
+    # Find out if a particular domain is associated with an government agency.
     #
-    # Returns true if it looks like an academic organization; false otherwise.
+    # Returns true if it looks like an government agency; false otherwise.
     #
     # Raises a Demandbase::RTIDNotSetError if a RTID key is not set.
     # Raises a Demandbase::ParseError if the domain doesn't look legit.
@@ -151,8 +165,26 @@ module Demandbase
     #
     def is_government?(domain)
       record = Demandbase::DomainRecord.new(domain)
-      puts record.inspect
+
       if record && GOVERNMENT_SIC_CODES.include?(record.primary_sic)
+        return true
+      else
+        return false
+      end
+    end
+
+    # Find out if a particular domain is associated with a nonprofit.
+    #
+    # Returns true if it looks like a nonprofit; false otherwise.
+    #
+    # Raises a Demandbase::RTIDNotSetError if a RTID key is not set.
+    # Raises a Demandbase::ParseError if the domain doesn't look legit.
+    # Raises a Demandbase::ServerError if the Demandbase server is unresponsive.
+    #
+    def is_nonprofit?(domain)
+      record = Demandbase::DomainRecord.new(domain)
+
+      if record && NONPROFIT_SIC_CODES.include?(record.primary_sic)
         return true
       else
         return false

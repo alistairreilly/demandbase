@@ -50,12 +50,34 @@ class TestDemandbase < Test::Unit::TestCase
     ]
 
     government_agencies.each do |government_agency|
-      puts government_agency
       assert_equal true, Demandbase::is_government?(government_agency), government_agency
     end
 
     non_government_agencies.each do |non_government_agency|
       assert_equal false, Demandbase::is_government?(non_government_agency), non_government_agency
+    end
+  end
+
+  should "know a nonprofit by domain name" do
+    nonprofits = [
+      'gatesfoundation.org',
+      'bhf.org.uk'
+      #'rspca.org.uk',
+      #'runningchicken.org'
+
+    ]
+
+    non_nonprofits = [ # nonprofit
+      'rangers.co.uk',
+      'leereilly.net'
+    ]
+
+    nonprofits.each do |nonprofit|
+      assert_equal true, Demandbase::is_nonprofit?(nonprofit), nonprofit
+    end
+
+    non_nonprofits.each do |non_nonprofit|
+      assert_equal false, Demandbase::is_nonprofit?(non_nonprofit), non_nonprofit
     end
   end
 
