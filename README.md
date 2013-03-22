@@ -167,11 +167,7 @@ email_looking_thing 'willy@microsoft.com'
 
   <tr>
     <td>registry_company_name</td>
-<<<<<<< HEAD
-    <td>:finna_die:</td>
-=======
     <td>:finnadie:</td>
->>>>>>> ae8ee8ca255b42a6a0754c9087e83102c966d2f8
     <td>:metal:</td>
   </tr>
 
@@ -344,11 +340,7 @@ email_looking_thing 'willy@microsoft.com'
   </tr>
 
   <tr>
-<<<<<<< HEAD
-    <td>employee_range</td>
-=======
     <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#employee-range">employee_range</a></td>
->>>>>>> ae8ee8ca255b42a6a0754c9087e83102c966d2f8
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>

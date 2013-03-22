@@ -30,21 +30,81 @@ module Demandbase
     "8299"  # schools and educational services, not elsewhere classified
   ]
 
+  # SIC codes for government.
+  GOVERNMENT_SIC_CODES = [
+    "91",   # executive, legislative, and general government, except finance
+    "911",  # executive offices
+    "9111", # executive offices
+    "912",  # legislative bodies
+    "9121", # legislative bodies
+    "913",  # executive and legislative offices combined
+    "9131", # executive and legislative offices combined
+    "919",  # general government, not elsewhere classified
+    "9199", # general government, not elsewhere classified
+    "92",   # justice, public order, and safety
+    "921",  # courts
+    "9211", # courts
+    "922",  # public order and safety
+    "9221", # police protection
+    "9222", # legal counsel and prosecution
+    "9223", # correctional institutions
+    "9224", # fire protection
+    "9229", # public order and safety, not elsewhere classified
+    "93",   # public finance, taxation, and monetary policy
+    "931",  # public finance, taxation, and monetary policy
+    "9311", # public finance, taxation, and monetary policy
+    "94",   # administration of human resource programs
+    "941",  # administration of educational programs
+    "9411", # administration of educational programs
+    "943",  # administration of public health programs
+    "9431", # administration of educational programs
+    "944",  # administration of social, human resource and income maintenance programs
+    "9441", # administration of social, human resource and income maintenance prorgrams
+    "945",  # administration of veterans' affairs, except health and insurance
+    "9451", # administration of veterans' affairs, except health and insurance
+    "95",   # administration of environmental quality and housing programs
+    "951",  # administration of environmental quality programs
+    "9511", # air and water resource and solid waste management
+    "9512", # land, mineral, wildlife, and forest conservation
+    "953",  # administration of housing and urban development progr
+    "9531", # administration of housing programs
+    "9532", # administration of urban planning and community and rural development
+    "96",   # administration of economic programs
+    "961",  # administration of general economic programs
+    "9611", # administration of general economic programs
+    "962",  # regulation and administration of transportation programs
+    "9621", # regulation and administration of transportation programs
+    "963",  # regulation and administration of communications, electric, gas, and other utilities
+    "9631", # regulation and administration of communications, electric, gas, and other utilities
+    "964",  # regulation of agricultural marketing and commodities
+    "9641", # regulation of agricultural marketing and commodities
+    "965",  # regulation, licensing, and inspection of miscellaneous commercial
+    "9561", # regulation, licensing, and inspection of miscellaneous commercial
+    "966",  # space research and technology
+    "9661", # space research and technology
+    "977",  # national security and international affairs
+    "971",  # national security
+    "9711", # national security
+    "972",  # international affairs
+    "9721"  # international affairs
+  ]
+
   class << self
 
-    # def lookup_ip
+    def lookup_ip(query)
+      Demandbase::IPRecord.new(query)
+    end
+    alias_method :lookup_ip_address, :lookup_ip
 
-    # end
-    # alias :lookup_ip_address
+    def lookup_domain(query)
+      Demandbase::DomainRecord.new(query)
+    end
+    alias_method :lookup_domain_name, :lookup_domain
 
-    # def lookup_domain
+    def lazy_lookup
 
-    # end
-
-    # def lazy_lookup
-
-    # end
-    # alias_method :lookup, :lazy_lookup
+    end
+    alias_method :lookup, :lazy_lookup
 
     # Look up a Demandbase record for a given domain name.
     #
@@ -75,6 +135,24 @@ module Demandbase
     def is_academic?(domain)
       record = Demandbase::DomainRecord.new(domain)
       if record && ACADEMIC_SIC_CODES.include?(record.primary_sic)
+        return true
+      else
+        return false
+      end
+    end
+
+    # Find out if a particular domain is associated with an academic institution.
+    #
+    # Returns true if it looks like an academic organization; false otherwise.
+    #
+    # Raises a Demandbase::RTIDNotSetError if a RTID key is not set.
+    # Raises a Demandbase::ParseError if the domain doesn't look legit.
+    # Raises a Demandbase::ServerError if the Demandbase server is unresponsive.
+    #
+    def is_government?(domain)
+      record = Demandbase::DomainRecord.new(domain)
+      puts record.inspect
+      if record && GOVERNMENT_SIC_CODES.include?(record.primary_sic)
         return true
       else
         return false

@@ -1,74 +1,62 @@
 require 'helper'
 
 class TestDemandbase < Test::Unit::TestCase
-  # should "get a record for Stanford University" do
-  #   #assert_equal 'Stanford University', Demandbase::lookup_domain('stanford.edu')
-  # end
+  should "get a record for Stanford University's domain name" do
+    assert_equal 'Stanford', Demandbase::lookup_domain('stanford.edu').company_name
+  end
 
-  # should "get a record for the University of Strathclyde" do
+  should "get a record for a Stanford Uniersity IP" do
+    assert_equal 'Stanford Uniersity', Demandbase::lookup_ip('68.65.169.67').company_name # typo intentional
+  end
 
-  # end
+  should "be able to lazily lookup" do
+    assert_equal "Demandbase::IPRecord", Demandbase::lookup('68.65.169.67').class.to_s
+    assert_equal "Demandbase::DomainRecord", Demandbase::lookup('github.com').class.to_s
+  end
 
-  # should "get a record for a GitHub's IP address" do
+  should "know a school by domain name" do
+    schools = [
+      'strath.ac.uk',
+      'stanford.edu',
+      'walnutcreeksd.org'
+    ]
 
-  # end
+    not_schools = [
+      'lanl.gov',
+      'microsoft.com'
+    ]
 
-  # should "recognize IP addresses" do
+    schools.each do |school|
+      assert_equal true, Demandbase::is_academic?(school)
+    end
 
-  # end
+    not_schools.each do |school|
+      assert_equal false, Demandbase::is_academic?(school)
+    end
+  end
 
-  # should "recognize domain names" do
+  should "know a goverment agency / body by domain name" do
+    government_agencies = [
+      'jgi.doe.gov',
+      'cia.gov',
+      'glasgow.gov.uk',
+      #'lanl.gov'
+      #'gchq.gov.uk'
+    ]
 
-  # end
+    non_government_agencies = [
+      'rangers.co.uk',
+      'leereilly.net'
+    ]
 
-  # should "handle multiple formats" do
-  #   queries = [
-  #     "microsoft.com",
-  #     "www.microsoft.com",
-  #     "developer.hacks.microsoft.com",
-  #     "http://www.microsoft.com",
-  #     "https://www.microsofot.com",
-  #     "william.gates@microsoft.com",
-  #     "microsoft.co.uk"
-  #   ].each do |query|
-  #     assert_equal true, Demandbase::is_domain(query), query
-  #   end
-  #   assert_equal true, Demandbase::is_domain("google.com")
-  #   assert_equal false, Demandbase::is_domain("12.12.12.12")
-  # end
+    government_agencies.each do |government_agency|
+      puts government_agency
+      assert_equal true, Demandbase::is_government?(government_agency), government_agency
+    end
 
-  # should "know an IP" do
-  #   assert_equal true, Demandbase::is_ip("12.12.12.12")
-  #   assert_equal false, Demandbase::is_ip("123.com")
-  # end
-
-  # should "return nothing when no record is found" do
-
-  # end
-
-  # should "throw an exception when the service is down" do
-
-  # end
-
-  # should "know a school" do
-  #   schools = [
-  #     'strath.ac.uk',
-  #     'stanford.edu',
-  #     'walnutcreeksd.org'
-  #   ]
-
-  #   not_schools = [
-  #     'lanl.gov',
-  #     'microsoft.com'
-  #   ]
-
-  #   schools.each do |school|
-  #     assert_equal true, Demandbase::is_academic?(school)
-  #   end
-
-  #   not_schools.each do |school|
-  #     assert_equal false, Demandbase::is_academic?(school)
-  #   end
-  # end
+    non_government_agencies.each do |non_government_agency|
+      assert_equal false, Demandbase::is_government?(non_government_agency), non_government_agency
+    end
+  end
 
 end
