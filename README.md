@@ -389,30 +389,63 @@ email_looking_thing 'willy@microsoft.com'
 
 </table>
 
-#### Employee Range
+#### Registry Company Name
 
-<table>
-  <tr>
-    <th>Value</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>Unknown</td>
-    <td>:house:</td>
-  </tr>
-  <tr>
-    <td>Small</td>
-    <td>:school:1-99 employees</td>
-  </tr>
-  <tr>
-    <td>Mid-Market</td>
-    <td>:department_store: 100-999 employees</td>
-  </tr>
-  <tr>
-    <td>Enterprise</td>
-    <td>:office: 1000+ employees</td>
-  </tr>
-</table>
+#### Registry City
+
+#### Registry State
+
+#### Registry Country
+
+#### Registry Latitude
+
+#### Registry Longitude
+
+#### IP
+
+#### Information Level
+
+#### World HQ SID
+
+#### Domestic HQ SID
+
+#### HQ SID
+
+#### ISP
+
+#### Company Name
+
+#### Demandbase SID
+
+#### Marketing Alias
+
+#### Industry
+
+#### Sub Industry
+
+#### Employee Count
+
+#### Primary SIC
+
+#### Street Address
+
+#### City
+
+#### State
+
+#### Zip
+
+#### Country
+
+#### Country Name
+
+#### Phone
+
+#### Web Site
+
+#### Annual Sales
+
+#### Revenue Range
 
 #### Revenue Range
 
@@ -471,6 +504,31 @@ email_looking_thing 'willy@microsoft.com'
   </tr>
 </table>
 
+#### Employee Range
+
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Unknown</td>
+    <td>:house:</td>
+  </tr>
+  <tr>
+    <td>Small</td>
+    <td>:school:1-99 employees</td>
+  </tr>
+  <tr>
+    <td>Mid-Market</td>
+    <td>:department_store: 100-999 employees</td>
+  </tr>
+  <tr>
+    <td>Enterprise</td>
+    <td>:office: 1000+ employees</td>
+  </tr>
+</table>
+
 #### Audience
 
 <table>
@@ -504,6 +562,20 @@ email_looking_thing 'willy@microsoft.com'
       <td>Bots</td>
    </tr>
 </table>
+
+#### B2B
+
+#### B2C
+
+#### Traffic
+
+#### Latitude
+
+#### Longitude
+
+#### Fortune 1000
+
+#### Forbes 2000
 
 ### DLC / Enhancements
 
