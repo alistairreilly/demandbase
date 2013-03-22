@@ -166,223 +166,223 @@ email_looking_thing 'willy@microsoft.com'
   </tr>
 
   <tr>
-    <td>registry_company_name</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#registry-company-name">registry_company_name</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>registry_city</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#registry-city">registry_city</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>registry_state</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#registry-state">registry_state</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>registry_country</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#registry-country">registry_country</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>registry_latitude</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#registry-latitude">registry_latitude</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>registry_longitude</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#registry-longitude">registry_longitude</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>ip</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#ip">ip</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>information_level</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#information-level">information_level</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>worldhq_sid</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#worldhq-sid">worldhq_sid</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>domestichq_sid</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#domestichq-sid">domestichq_sid</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>hq_sid</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#hq-sid">hq_sid</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>isp</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#isp">isp</a></td>
     <td>:finnadie:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>company_name</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#company-name">company_name</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>demandbase_sid</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#demandbase-sid">demandbase_sid</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>marketing_alias</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#marketing-alias">marketing_alias</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>industry</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#industry">industry</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>sub_industry</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#sub-industry">sub_industry</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>employee_count</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#employee-count">employee_count</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>primary_sic</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#primary-sic">primary_sic</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>street_address</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#street-address">street_address</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>city</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#city">city</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>state</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#state">state</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>zip</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#zip">zip</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>country</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#country">country</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>country_name</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#country-name">country_name</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>phone</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#phone">phone</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>web_site</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#web-site">web_site</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>annual_sales</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#annual-sales">annual_sales</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>revenue_range</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#revenue-range">revenue_range</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#employee-range">employee_range</a></td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#employee-range">employee_range</a>/a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>b2b</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#b2b">b2b</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>b2c</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#b2c">b2c</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>traffic</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#traffic">traffic</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>latitude</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#latitude">latitude</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>longitude</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#longitude">longitude</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>fortune_1000</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#fortune_1000">fortune_1000</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
 
   <tr>
-    <td>forbes_2000</td>
+    <td><a href="https://github.com/leereilly/demandbase/blob/master/README.md#forbes_2000">forbes_2000</a></td>
     <td>:metal:</td>
     <td>:metal:</td>
   </tr>
