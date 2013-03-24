@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "demandbase"
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Lee Reilly"]
-  s.date = "2013-03-15"
+  s.date = "2013-03-24"
   s.description = "Ruby wrapper for the Demandbase API"
   s.email = "lee@leereilly.net"
   s.extra_rdoc_files = [
@@ -26,10 +26,14 @@ Gem::Specification.new do |s|
     "VERSION",
     "demandbase.gemspec",
     "lib/demandbase.rb",
+    "lib/demandbase/domain_record.rb",
     "lib/demandbase/error.rb",
+    "lib/demandbase/ip_record.rb",
     "lib/demandbase/record.rb",
     "test/helper.rb",
     "test/test_demandbase.rb",
+    "test/test_domain_record.rb",
+    "test/test_ip_record.rb",
     "test/test_record.rb"
   ]
   s.homepage = "http://github.com/leereilly/demandbase"
