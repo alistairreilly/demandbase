@@ -43,6 +43,15 @@ record = Demandbase::lookup_domain 'microsoft.com'
 record.company_name
 # => "Microsoft Corporation"
 
+record.is_academic?
+# => false
+
+record.is_government?
+# => false
+
+record.is_nonprofit?
+# => false
+
 record.demandbase_sid
 # => 457441
 
