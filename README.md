@@ -135,11 +135,6 @@ The IP lookup returns some additional information e.g.
 ```ruby
 record = Demandbase::lookup_ip 'microsoft.com'
 # => <Demandbase::Record:0x007fce82a46060>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ae8ee8ca255b42a6a0754c9087e83102c966d2f8
 ```
 
 #### Lazy Lookup
