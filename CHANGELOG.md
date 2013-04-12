@@ -1,6 +1,11 @@
+# 0.1.6
+
+* Added `is_academic?` and `is_government()` instance methods. Thanks @benbalter!
+* Added support for deprecated `lazy_lookup()` method. Thanks @benbalter!
+
 # 0.1.4
 
-* Add a utility method `is_academic?(domain)` for detecting academic organizations, educational institutions, etc.
+* Added a utility method `is_academic?(domain)` for detecting academic organizations, educational institutions, etc.
 
 # 0.1.3
 
