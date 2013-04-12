@@ -135,7 +135,7 @@ record = Demandbase::lookup_ip 'microsoft.com'
 
 #### Lazy Lookup
 
-If you have an IP, domain name, email address, or craptacular URL and just want to use that use `lazy_lookup`
+If you have an IP, domain name, email address, or craptacular URL and just want to use that use `lookup`
 
 ```ruby
 ip_looking_thing = '12.12.12.12'
@@ -143,16 +143,16 @@ domain_looking_thing 'http://google.com'
 url_looking_thing 'www.google.com/lol?seriously=true'
 email_looking_thing 'willy@microsoft.com'
 
-(Demandbase::lazy_lookup ip_looking_thing).class
+(Demandbase::lookup ip_looking_thing).class
 # => Demanbase::IPRecord
 
-(Demandbase::lazy_lookup domain_looking_thing).class
+(Demandbase::lookup domain_looking_thing).class
 # => Demanbase::DomainRecord
 
-(Demandbase::lazy_lookup url_looking_thing).class
+(Demandbase::lookup url_looking_thing).class
 # => Demanbase::DomainRecord
 
-(Demandbase::lazy_lookup email_looking_thing).class
+(Demandbase::lookup email_looking_thing).class
 # => Demanbase::DomainRecord
 ```
 
