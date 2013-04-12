@@ -5,6 +5,16 @@ class TestDemandbaseRecord < Test::Unit::TestCase
     assert ENV['DEMANDBASE_RTID_KEY'], "Please set your $DEMANDBASE_RTID_KEY"
   end
 
+  should "recognize academic institutions" do
+    record = Demandbase::lookup 'stanford.edu'
+    assert_equal true, record.is_academic?
+  end
+
+  should "recognize government institutions" do
+    record = Demandbase::lookup 'fbi.gov'
+    assert_equal true, record.is_government?
+  end
+
   # should "initialize a new record with a valid domain" do
   #   domain = 'github.com'
   #   record = Demandbase::Record.new(domain)
