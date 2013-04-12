@@ -114,11 +114,6 @@ module Demandbase
     end
     alias_method :lookup_domain_name, :lookup_domain
 
-    def lazy_lookup
-
-    end
-    alias_method :lookup, :lazy_lookup
-
     # Look up a Demandbase record for a given domain name.
     #
     # Returns a Demandbase::Record if the record is found; nil otherwise.
@@ -136,6 +131,7 @@ module Demandbase
         raise Demandbase::ParseError
       end
     end
+    alias_method :lazy_lookup, :lookup
 
     # Find out if a particular domain is associated with an academic institution.
     #

@@ -1,6 +1,18 @@
 require 'helper'
 
 class TestDemandbase < Test::Unit::TestCase
+  should "ensure lazy_lookup sticks around as an aliased lookup method for early adopters" do
+    Demandbase.method(:lazy_lookup) == Demandbase.method(:lookup)
+  end
+
+  should "lazily lookup domain names" do
+    assert_equal Demandbase::DomainRecord, Demandbase::lookup('stanford.edu').class
+  end
+
+  should "lazily lookup IPv4 addresses" do
+    assert_equal Demandbase::IPRecord, Demandbase::lookup('68.65.169.67').class
+  end
+
   should "get a record for Stanford University's domain name" do
     assert_equal 'Stanford', Demandbase::lookup_domain('stanford.edu').company_name
   end
