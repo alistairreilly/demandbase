@@ -49,9 +49,6 @@ record.is_academic?
 record.is_government?
 # => false
 
-record.is_nonprofit?
-# => false
-
 record.demandbase_sid
 # => 457441
 
