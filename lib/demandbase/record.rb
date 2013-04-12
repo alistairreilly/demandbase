@@ -31,5 +31,29 @@ module Demandbase
     def rtid_key
       ENV['DEMANDBASE_RTID_KEY']
     end
+
+    def is_academic?
+      if Demandbase::ACADEMIC_SIC_CODES.include?(primary_sic)
+        return true
+      else
+        return false
+      end
+    end
+
+    def is_government?
+      if Demandbase::GOVERNMENT_SIC_CODES.include?(primary_sic)
+        return true
+      else
+        return false
+      end
+    end
+
+    def is_nonprofit?
+    if Demandbase::NONPROFIT_SIC_CODES.include?(primary_sic)
+        return true
+      else
+        return false
+      end
+    end
   end
 end
