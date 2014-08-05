@@ -145,16 +145,16 @@ url_looking_thing 'www.google.com/lol?seriously=true'
 email_looking_thing 'willy@microsoft.com'
 
 (Demandbase::lookup ip_looking_thing).class
-# => Demanbase::IPRecord
+# => Demandbase::IPRecord
 
 (Demandbase::lookup domain_looking_thing).class
-# => Demanbase::DomainRecord
+# => Demandbase::DomainRecord
 
 (Demandbase::lookup url_looking_thing).class
-# => Demanbase::DomainRecord
+# => Demandbase::DomainRecord
 
 (Demandbase::lookup email_looking_thing).class
-# => Demanbase::DomainRecord
+# => Demandbase::DomainRecord
 ```
 
 ### Field Info
