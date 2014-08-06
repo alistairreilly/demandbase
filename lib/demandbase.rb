@@ -151,7 +151,7 @@ module Demandbase
       end
     end
 
-    # Find out if a particular domain is associated with an government agency.
+    # Find out if a particular domain is associated with a government agency.
     #
     # Returns true if it looks like an government agency; false otherwise.
     #
