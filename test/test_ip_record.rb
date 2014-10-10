@@ -14,9 +14,9 @@ class TestDemandbaseIPRecord <  Minitest::Test
     assert_equal "US", record.registry_country_code
     assert_equal 37.41780090332031, record.registry_latitude
     assert_equal -122.1719970703125, record.registry_longitude
-    assert_equal "Stanford Uniersity", record.company_name    # typo intentional
+    assert_equal "Stanford University", record.company_name    # typo intentional
     assert_equal 28548234, record.demandbase_sid
-    assert_equal "Stanford Uniersity", record.marketing_alias # typo intentional
+    assert_equal "Stanford University", record.marketing_alias # typo intentional
     assert_equal "Education", record.industry
     assert_equal "University", record.sub_industry
     assert_equal 15, record.employee_count
