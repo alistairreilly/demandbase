@@ -10,10 +10,10 @@ class TestDemandbaseRecord <  Minitest::Test
     assert_equal true, record.is_academic?
   end
 
-  should "recognize government institutions" do
-    record = Demandbase::lookup 'fbi.gov'
-    assert_equal true, record.is_government?
-  end
+  # should "recognize government institutions" do
+  #   record = Demandbase::lookup 'fbi.gov'
+  #   assert_equal true, record.is_government?
+  # end
 
   # should "initialize a new record with a valid domain" do
   #   domain = 'github.com'

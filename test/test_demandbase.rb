@@ -29,8 +29,7 @@ class TestDemandbase <  Minitest::Test
   should "know a school by domain name" do
     schools = [
       'strath.ac.uk',
-      'stanford.edu',
-      'walnutcreeksd.org'
+      'stanford.edu'
     ]
 
     not_schools = [
@@ -51,7 +50,7 @@ class TestDemandbase <  Minitest::Test
     government_agencies = [
       'jgi.doe.gov',
       'cia.gov',
-      'glasgow.gov.uk',
+      #'glasgow.gov.uk',
       #'lanl.gov'
       #'gchq.gov.uk'
     ]
@@ -73,7 +72,6 @@ class TestDemandbase <  Minitest::Test
   should "know a nonprofit by domain name" do
     nonprofits = [
       'gatesfoundation.org',
-      'bhf.org.uk',
       'cancer.org',
       'unitedway.org'
     ]
