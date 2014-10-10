@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestDemandbase < Test::Unit::TestCase
+class TestDemandbase <  Minitest::Test
   should "ensure lazy_lookup sticks around as an aliased lookup method for early adopters" do
     Demandbase.method(:lazy_lookup) == Demandbase.method(:lookup)
   end

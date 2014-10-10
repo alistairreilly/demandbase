@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestDemandbaseIPRecord < Test::Unit::TestCase
+class TestDemandbaseIPRecord <  Minitest::Test
   should "initialize a new record with a valid ip" do
     ip = '68.65.169.67'
     record = Demandbase::IPRecord.new(ip)

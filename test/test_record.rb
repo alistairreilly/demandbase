@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestDemandbaseRecord < Test::Unit::TestCase
+class TestDemandbaseRecord <  Minitest::Test
   should "remember to set DEMANDBASE_RTID_KEY" do
     assert ENV['DEMANDBASE_RTID_KEY'], "Please set your $DEMANDBASE_RTID_KEY"
   end

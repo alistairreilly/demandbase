@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestDemandbaseDomainRecord < Test::Unit::TestCase
+class TestDemandbaseDomainRecord <  Minitest::Test
   should "initialize a new record with a valid domain" do
     domain = 'github.com'
     record = Demandbase::DomainRecord.new(domain)
