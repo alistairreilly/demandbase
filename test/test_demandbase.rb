@@ -14,11 +14,11 @@ class TestDemandbase <  Minitest::Test
   end
 
   should "get a record for Stanford University's domain name" do
-    assert_equal 'Stanford', Demandbase::lookup_domain('stanford.edu').company_name
+    assert_equal 'Stanford University', Demandbase::lookup_domain('stanford.edu').company_name
   end
 
   should "get a record for a Stanford Uniersity IP" do
-    assert_equal 'Stanford Uniersity', Demandbase::lookup_ip('68.65.169.67').company_name # typo intentional
+    assert_equal 'Stanford University', Demandbase::lookup_ip('68.65.169.67').company_name # typo intentional
   end
 
   should "be able to lazily lookup" do
