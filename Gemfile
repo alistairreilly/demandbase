@@ -7,7 +7,7 @@ gem "rest-client",   "~> 1.6.7"
 group :development do
   gem "bundler",  "~> 1.6"
   gem "jeweler",  "~> 1.8.3"
-  gem "mocha",      "~> 0.13.3"
+  gem "mocha",    "~> 0.13.3"
   gem "rdoc",     "~> 3.12"
   gem "shoulda",  ">= 3.3.2"
 end
