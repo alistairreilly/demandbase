@@ -73,10 +73,9 @@ class TestDemandbase <  Minitest::Test
   should "know a nonprofit by domain name" do
     nonprofits = [
       'gatesfoundation.org',
-      'bhf.org.uk'
-      #'rspca.org.uk',
-      #'runningchicken.org'
-
+      'bhf.org.uk',
+      'cancer.org',
+      'unitedway.org'
     ]
 
     non_nonprofits = [ # nonprofit

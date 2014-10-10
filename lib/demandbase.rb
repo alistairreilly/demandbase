@@ -92,6 +92,7 @@ module Demandbase
   # SIC codes for registered nonprofits.
   NONPROFIT_SIC_CODES = [
     "6732", # Educational, religious, and charitable Trusts
+    "8399", # Social Services, Not Elsewhere Classified
     "864",  # Civic, social, and fraternal associations
     "8641", # Civic, social, and fraternal associations
     "865",  # Political organizations
