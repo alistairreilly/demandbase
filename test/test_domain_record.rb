@@ -53,7 +53,7 @@ class TestDemandbaseDomainRecord <  Minitest::Test
   end
 
   should "raise a ParseError if the domain doesn't look valid" do
-    assert_raise(Demandbase::ParseError) { Demandbase::lookup('NOPE') }
+    assert_raises(Demandbase::ParseError) { Demandbase::lookup('NOPE') }
   end
 
   should "recognize valid domains" do
@@ -72,7 +72,7 @@ class TestDemandbaseDomainRecord <  Minitest::Test
 
   should "raise a ServerError if there's a problem communicating with the Demandbase server" do
     Demandbase::DomainRecord.any_instance.stubs(:api_url).returns('http://www.example.com')
-    assert_raise(Demandbase::ServerError) { Demandbase::DomainRecord.new('github.com') }
+    assert_raises(Demandbase::ServerError) { Demandbase::DomainRecord.new('github.com') }
     Demandbase::DomainRecord.any_instance.unstub(:api_url)
   end
 end
