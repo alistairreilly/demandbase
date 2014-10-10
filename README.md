@@ -1,8 +1,4 @@
-The Demandbase gem is a Ruby wrapper for the [Demandbase](http://www.demandbase.com?affiliate_id=LOL_JK_MAYBE) real-time targeting and personalization platform's [API](http://wiki.demandbaselabs.com/mwiki/index.php?title=Demandbase_API_Documentation).
-
-### Prerequisites
-
-You'll need an active Demandbase account with at least one Real Time Identification (RTID) key. You can sign up for a trial developer key [here](http://www.demandbase.com/who-is-demandbase/contact-demandbase/?affiliate_id=LOL_JK_MAYBE).
+The Demandbase gem is a Ruby wrapper for the [Demandbase](http://www.demandbase.com?affiliate_id=LOL_JK_MAYBE) real-time targeting and personalization platform's API.
 
 ### Installation
 
@@ -10,25 +6,9 @@ Install the Demandbase wrapper with:
 
 `gem install demandbase`
 
-or add the following to your `Gemfile`:
-
-`gem 'demandbase', '~> 0.1.1'`
-
 ### Configuraton
 
-Set an environment variable called `$DEMANDBASE_RTID_KEY` with the your RTID key value.
-
-#### Bash Example
-
-```
-export DEMANDBASE_RTID_KEY=1234deadbeef4321
-```
-
-#### Heroku Example
-
-```
-heroku config:add DEMANDBASE_RTID_KEY=1234deadbeef4321
-```
+Set an environment variable called `DEMANDBASE_RTID_KEY` with the your RTID key value. You can sign up for a trial developer key [here](http://www.demandbase.com/who-is-demandbase/contact-demandbase/?affiliate_id=LOL_JK_MAYBE).
 
 ### Usage
 
